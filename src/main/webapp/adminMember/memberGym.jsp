@@ -107,21 +107,23 @@
 </div>
 <!-- Main Tabs -->
 <div class="flex gap-8 mb-8 border-b border-outline-variant/20">
-<button class="pb-4 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors relative">자격승인</button>
-<button class="pb-4 text-sm font-bold text-primary border-b-2 border-primary relative">회원리스트</button>
+<a href="<%= request.getContextPath() %>/memberAuth"
+class="pb-4 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors relative">자격승인</a>
+<a href="<%= request.getContextPath() %>/memberGym"
+class="pb-4 text-sm font-bold text-primary border-b-2 border-primary relative">회원리스트</a>
 </div>
 <!-- Bento Filter Section -->
 <div class="grid grid-cols-12 gap-6 mb-8">
 <div class="col-span-12 lg:col-span-4 bg-surface-container-lowest p-1 rounded-xl flex shadow-sm border border-outline-variant/10">
-<a href="<%= contextPath %>/adminMember/memberGym.jsp"
+<a href="<%= contextPath %>/memberGym"
 class="flex-1 py-2 text-sm font-semibold rounded-lg transition-all bg-primary text-white shadow-md flex items-center justify-center">
 헬스장
 </a>
-<a href="<%= contextPath %>/adminMember/memberTrainer.jsp"
+<a href="<%= contextPath %>/memberTrainer"
 class="flex-1 py-2 text-sm font-semibold rounded-lg transition-all text-on-surface-variant hover:bg-surface-container flex items-center justify-center">
 트레이너
 </a>
-<a href="<%= contextPath %>/adminMember/memberClient.jsp"
+<a href="<%= contextPath %>/memberClient"
 class="flex-1 py-2 text-sm font-semibold rounded-lg transition-all text-on-.surface-variant hover:bg-surface-container flex items-center justify-center">
 회원
 </a>

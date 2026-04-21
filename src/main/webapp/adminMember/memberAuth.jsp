@@ -96,23 +96,6 @@
 </div>
 <!-- Main Content Area -->
 <main class="ml-64 min-h-screen">
-<!-- TopNavBar Shell -->
-<header class="fixed top-0 right-0 w-[calc(100%-16rem)] flex justify-between items-center px-8 h-16 z-40 glass-header">
-<div class="flex items-center flex-1">
-<div class="relative w-96">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg" data-icon="search">search</span>
-<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-lg text-sm focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="회원 이름 또는 연락처 검색..." type="text"/>
-</div>
-</div>
-<div class="flex items-center gap-6">
-<div class="flex items-center gap-2 text-on-surface-variant">
-<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors" data-icon="notifications">notifications</span>
-<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors" data-icon="settings">settings</span>
-</div>
-<div class="h-6 w-[1px] bg-outline-variant/30"></div>
-<span class="text-sm font-medium text-on-surface">관리자</span>
-</div>
-</header>
 <!-- Page Canvas -->
 <div class="pt-24 px-10 pb-10 max-w-7xl">
 <!-- Header Section -->
@@ -124,8 +107,10 @@
 </div>
 <!-- Main Tabs -->
 <div class="flex gap-8 mb-8 border-b border-outline-variant/20">
-<button class="pb-4 text-sm font-bold text-primary border-b-2 border-primary relative">자격승인</button>
-<button class="pb-4 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors relative">회원리스트</button>
+<a href="<%= request.getContextPath() %>/memberAuth"
+class="pb-4 text-sm font-bold text-primary border-b-2 border-primary relative">자격승인</a>
+<a href="<%= request.getContextPath() %>/memberGym"
+class="pb-4 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors relative">회원리스트</a>
 </div>
 <!-- Content Grid: Member List + Detail Profile -->
 <div class="grid grid-cols-12 gap-8 items-start">
