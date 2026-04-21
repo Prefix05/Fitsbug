@@ -139,10 +139,10 @@
 </nav>
 </div>
 <div class="flex flex-col gap-2 mt-auto pt-4 border-t border-surface-container-highest">
-<button onclick="location.href='<%=contextPath%>/login.jsp'" class="bg-primary text-on-primary py-2.5 px-4 rounded-xl font-bold text-sm active:scale-95 transition-transform">
+<button onclick="location.href='login.jsp'" class="bg-primary text-on-primary py-2.5 px-4 rounded-xl font-bold text-sm active:scale-95 transition-transform">
                 로그인하여 시작하기
             </button>
-<button onclick="location.href='<%=contextPath%>/join.jsp'" class="border-2 border-outline-variant text-on-surface py-2.5 px-4 rounded-xl font-bold text-sm hover:bg-surface-container-low transition-colors active:scale-95">
+<button onclick="location.href='join.jsp'" class="border-2 border-outline-variant text-on-surface py-2.5 px-4 rounded-xl font-bold text-sm hover:bg-surface-container-low transition-colors active:scale-95">
                 회원가입
             </button>
 </div>
@@ -349,7 +349,7 @@
 </div>
 <div class="flex items-center gap-6">
 <span class="text-[10px] font-black text-slate-300 tracking-widest hidden md:block">FITSBUG EXPERIENCE</span>
-<button onclick="location.href='<%=contextPath%>/login.jsp'" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-2.5 rounded-xl text-sm font-bold shadow-lg shadow-blue-500/20 active:scale-95 transition-all">
+<button onclick="location.href='login.jsp'" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-2.5 rounded-xl text-sm font-bold shadow-lg shadow-blue-500/20 active:scale-95 transition-all">
 로그인
 </button>
 </div>

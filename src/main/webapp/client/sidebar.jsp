@@ -28,7 +28,7 @@
         <!-- 메뉴 -->
         <nav class="flex flex-col gap-2">
 
-            <a href="<%=contextPath%>/main.jsp"
+            <a href="<%=contextPath%>/client/main.jspain.jsp"
                class="flex items-center gap-3 px-4 py-2 rounded-xl text-blue-600 bg-white shadow-sm">
                 <span class="material-symbols-outlined">home</span>
                 <span class="text-sm font-semibold">홈</span>
@@ -52,7 +52,7 @@
                 <span class="text-sm">헬스장</span>
             </a>
 
-            <a href="<%=contextPath%>/community.jsp"
+            <a href="<%=contextPath%>/client/community.jspity.jsp"
                class="flex items-center gap-3 px-4 py-2 rounded-xl text-slate-500 hover:bg-blue-50">
                 <span class="material-symbols-outlined">groups</span>
                 <span class="text-sm">커뮤니티</span>
@@ -78,12 +78,12 @@
         </a>
 
         <!-- 로그인 / 회원가입 -->
-        <button onclick="location.href='<%=contextPath%>/login.jsp'"
+        <button onclick="location.href='login.jsp'"
                 class="bg-blue-600 text-white py-2 rounded-xl text-sm font-bold">
             로그인
         </button>
 
-        <button onclick="location.href='<%=contextPath%>/join.jsp'"
+        <button onclick="location.href='join.jsp'"
                 class="border py-2 rounded-xl text-sm font-bold hover:bg-gray-100">
             회원가입
         </button>
