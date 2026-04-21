@@ -1,8 +1,16 @@
-.idea/
-*.iml
+# Eclipse
+.classpath
+.project
+.settings/
 
-/classes/
-*.class
+# Build output
+build/
 target/
 
+# IntelliJ
+.idea/
+*.iml
+/classes
+
+# Mac
 .DS_Store
