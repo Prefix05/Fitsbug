@@ -28,7 +28,7 @@
         <!-- 메뉴 -->
         <nav class="flex flex-col gap-2">
 
-            <a href="<%=contextPath%>/client/main.jspain.jsp"
+            <a href="<%=contextPath%>/client/main.jsp"
                class="flex items-center gap-3 px-4 py-2 rounded-xl text-blue-600 bg-white shadow-sm">
                 <span class="material-symbols-outlined">home</span>
                 <span class="text-sm font-semibold">홈</span>
@@ -52,7 +52,7 @@
                 <span class="text-sm">헬스장</span>
             </a>
 
-            <a href="<%=contextPath%>/client/community.jspity.jsp"
+            <a href="<%=contextPath%>/client/community.jsp"
                class="flex items-center gap-3 px-4 py-2 rounded-xl text-slate-500 hover:bg-blue-50">
                 <span class="material-symbols-outlined">groups</span>
                 <span class="text-sm">커뮤니티</span>

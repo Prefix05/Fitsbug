@@ -1,18 +1,23 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%
-    String contextPath = request.getContextPath();
-%>
+<%--
+  Created by IntelliJ IDEA.
+  User: jinhoyon
+  Date: 4/21/26
+  Time: 10:54 AM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<% String contextPath = request.getContextPath(); %>
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Fitzberg Trainer Dashboard</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
     <link
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-            rel="stylesheet" />
+            rel="stylesheet"/>
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -146,7 +151,7 @@
         </button>
         <a href="./profile.html" class="p-1 rounded-full hover:ring-2 hover:ring-primary/30 transition-all">
             <img alt="연진호" class="w-8 h-8 rounded-full object-cover"
-                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmLhyuu6rdbT8CspzqySgGADnPxyIZWQ8JzIVzEVHSPkB3UoDOAnZJJhZ7cPpcvRt9El0mEpCGTPo-ipH8tmcW9-1VJX9uPfKjuW6-wnQk8l60TyYJuHFUx-ER7gH9tCPui0ZcXDuvH0okvDCPmNyngCwbTzX130D_1k-cU7r_UYLYwjc9G4FkGvBrwYIPVBudS3XRg5OfUza5BbOyu2mmJQa8uPxFR30YuJ6RWgfoV5POhIwmfRnsUouAZZYhCreQjA-1_7aGakeQ" />
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmLhyuu6rdbT8CspzqySgGADnPxyIZWQ8JzIVzEVHSPkB3UoDOAnZJJhZ7cPpcvRt9El0mEpCGTPo-ipH8tmcW9-1VJX9uPfKjuW6-wnQk8l60TyYJuHFUx-ER7gH9tCPui0ZcXDuvH0okvDCPmNyngCwbTzX130D_1k-cU7r_UYLYwjc9G4FkGvBrwYIPVBudS3XRg5OfUza5BbOyu2mmJQa8uPxFR30YuJ6RWgfoV5POhIwmfRnsUouAZZYhCreQjA-1_7aGakeQ"/>
         </a>
     </div>
 </header>
@@ -245,7 +250,8 @@
 
         <!-- 일정 -->
         <a class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-500 hover:bg-slate-200/50 transition-colors duration-200 rounded-lg"
-           href="/calendar.html" style=""><span class="material-symbols-outlined" data-icon="" style="">calendar_today</span>
+           href="/calendar.html" style=""><span class="material-symbols-outlined" data-icon=""
+                                                style="">calendar_today</span>
             일정</a>
 
         <!-- 메시지 -->
@@ -275,7 +281,7 @@
        class=" flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-500 hover:bg-slate-200/50 transition-colors duration-200 rounded-lg">
         <img alt="Alex Fischer" class="w-10 h-10 rounded-full object-cover shrink-0"
              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmLhyuu6rdbT8CspzqySgGADnPxyIZWQ8JzIVzEVHSPkB3UoDOAnZJJhZ7cPpcvRt9El0mEpCGTPo-ipH8tmcW9-1VJX9uPfKjuW6-wnQk8l60TyYJuHFUx-ER7gH9tCPui0ZcXDuvH0okvDCPmNyngCwbTzX130D_1k-cU7r_UYLYwjc9G4FkGvBrwYIPVBudS3XRg5OfUza5BbOyu2mmJQa8uPxFR30YuJ6RWgfoV5POhIwmfRnsUouAZZYhCreQjA-1_7aGakeQ"
-             style="" />
+             style=""/>
         <div class="overflow-hidden">
             <p class="text-sm font-bold text-on-surface truncate" style="">연진호</p>
             <p class="text-xs text-slate-500 truncate" style="">마이프로필</p>
@@ -335,11 +341,15 @@
                         <!-- Desktop: full buttons -->
                         <div class="hidden md:flex flex-wrap gap-3">
                             <button
-                                    class="px-8 py-3 bg-white text-slate-900 rounded-xl font-bold hover:bg-blue-50 transition-colors active:scale-95">프로필
-                                보기</button>
+                                    class="px-8 py-3 bg-white text-slate-900 rounded-xl font-bold hover:bg-blue-50 transition-colors active:scale-95">
+                                프로필
+                                보기
+                            </button>
                             <button
-                                    class="px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-xl font-semibold backdrop-blur-md transition-colors active:scale-95">+
-                                운동 추가</button>
+                                    class="px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-xl font-semibold backdrop-blur-md transition-colors active:scale-95">
+                                +
+                                운동 추가
+                            </button>
                             <button
                                     class="p-3 bg-white/10 hover:bg-white/20 text-white rounded-xl backdrop-blur-md transition-colors">
                                 <span class="material-symbols-outlined">chat_bubble</span>
@@ -663,8 +673,10 @@
                         </div>
                         <div class="p-3 bg-slate-50 text-center border-t border-slate-200/60">
                             <button
-                                    class="text-[11px] font-bold text-slate-500 hover:text-on-surface transition-colors">모든
-                                알림 보기</button>
+                                    class="text-[11px] font-bold text-slate-500 hover:text-on-surface transition-colors">
+                                모든
+                                알림 보기
+                            </button>
                         </div>
                     </div>
                 </section>
