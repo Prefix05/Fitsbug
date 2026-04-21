@@ -1,10 +1,15 @@
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Build output
+build/
+target/
+
+# IntelliJ
 .idea/
 *.iml
 
-/build/
-/classes/
-*.class
-out/
-target/
-
+# Mac
 .DS_Store
