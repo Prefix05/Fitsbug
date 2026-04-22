@@ -1,11 +1,17 @@
 package controller.admin;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import dto.admin.Member;
+import service.admin.MemberService;
+import service.admin.MemberServiceImpl;
 
 /**
  * Servlet implementation class MemberTrainer
@@ -26,15 +32,15 @@ public class MemberTrainer extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("adminMember/memberTrainer.jsp").forward(request, response);
+		try {
+			MemberService service = new MemberServiceImpl();
+			List<Member> list = service.getTrainerlist();
+			request.setAttribute("list", list);
+			request.getRequestDispatcher("/adminMember/memberTrainer.jsp").forward(request, response);
+		}catch(Exception e) {
+			e.printStackTrace();
+			request.setAttribute("err", "오류가 발생했습니다.");
+			request.getRequestDispatcher("error.jsp").forward(request, response);
+		}
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
 }

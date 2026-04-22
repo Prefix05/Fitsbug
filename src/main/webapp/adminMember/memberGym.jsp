@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 
 <html lang="ko"><head>
@@ -143,8 +145,10 @@ class="flex-1 py-2 text-sm font-semibold rounded-lg transition-all text-on-.surf
 <div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden border border-outline-variant/10">
 <div class="px-6 py-4 border-b border-outline-variant/10">
 <div class="relative w-72">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">search</span>
-<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-lg text-sm focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="헬스장명 검색..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">
+search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-lg text-sm focus:ring-2 focus:ring-primary/20 outline-none transition-all" 
+placeholder="헬스장명 검색..." type="text"/>
 </div>
 </div>
 <table class="w-full text-left border-collapse">
@@ -157,7 +161,8 @@ class="flex-1 py-2 text-sm font-semibold rounded-lg transition-all text-on-.surf
 </tr>
 </thead>
 <tbody class="divide-y divide-outline-variant/10">
-<!-- Row 1 -->
+<!-- Row  -->
+<c:forEach var="item" items="${gymList }">
 <tr class="hover:bg-surface-container-low transition-colors group">
 <td class="px-6 py-4">
 <div class="flex items-center gap-4">
@@ -165,78 +170,79 @@ class="flex-1 py-2 text-sm font-semibold rounded-lg transition-all text-on-.surf
 <span class="material-symbols-outlined">fitness_center</span>
 </div>
 <div>
-<p class="text-sm font-bold text-on-surface">강남 피트니스</p>
-<p class="text-xs text-on-surface-variant">02-555-1234</p>
+<p class="text-sm font-bold text-on-surface">${item.gymName }</p>
+<p class="text-xs text-on-surface-variant">${item.gymTel }</p>
 </div>
 </div>
 </td>
-<td class="px-6 py-4 text-sm text-on-surface-variant">2023.11.15</td>
-<td class="px-6 py-4 text-sm font-medium text-on-surface">150명</td><td class="px-6 py-4 text-sm font-medium text-on-surface">₩15,240,000</td>
+<td class="px-6 py-4 text-sm text-on-surface-variant">${item.regDate }</td>
+<td class="px-6 py-4 text-sm font-medium text-on-surface">${item.gymClientCount }</td>
+<td class="px-6 py-4 text-sm font-medium text-on-surface">
+₩<fmt:formatNumber value="${item.gymCal }" pattern="#,###"/></td>
 <td class="px-6 py-4 text-right">
 <button class="text-primary hover:bg-primary/10 p-2 rounded-full transition-colors">
 <span class="material-symbols-outlined">chevron_right</span>
 </button>
 </td>
 </tr>
-<!-- Row 2 -->
-<tr class="hover:bg-surface-container-low transition-colors group">
-<td class="px-6 py-4">
-<div class="flex items-center gap-4">
-<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
-<span class="material-symbols-outlined">fitness_center</span>
-</div>
-<div>
-<p class="text-sm font-bold text-on-surface">서초 월드짐</p>
-<p class="text-xs text-on-surface-variant">02-344-9876</p>
-</div>
-</div>
-</td>
-<td class="px-6 py-4 text-sm text-on-surface-variant">2023.12.02</td>
-<td class="px-6 py-4 text-sm font-medium text-on-surface">230명</td><td class="px-6 py-4 text-sm font-medium text-on-surface">₩8,450,000</td>
-<td class="px-6 py-4 text-right">
-<button class="text-primary hover:bg-primary/10 p-2 rounded-full transition-colors">
-<span class="material-symbols-outlined">chevron_right</span>
-</button>
+</c:forEach>
+<c:if test="${empty gymList }">
+<tr>
+<td colspan="5" class="px-6 py-10 text-center text-on-surface-variant">
+등록된 헬스장 정보가 없습니다.
 </td>
 </tr>
-<!-- Row 3 -->
-<tr class="hover:bg-surface-container-low transition-colors group">
-<td class="px-6 py-4">
-<div class="flex items-center gap-4">
-<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
-<span class="material-symbols-outlined">fitness_center</span>
-</div>
-<div>
-<p class="text-sm font-bold text-on-surface">홍대 바디랩</p>
-<p class="text-xs text-on-surface-variant">02-123-4567</p>
-</div>
-</div>
-</td>
-<td class="px-6 py-4 text-sm text-on-surface-variant">2024.01.10</td>
-<td class="px-6 py-4 text-sm font-medium text-on-surface">85명</td><td class="px-6 py-4 text-sm font-medium text-on-surface">₩2,220,000</td>
-<td class="px-6 py-4 text-right">
-<button class="text-primary hover:bg-primary/10 p-2 rounded-full transition-colors">
-<span class="material-symbols-outlined">chevron_right</span>
-</button>
-</td>
-</tr>
+</c:if>
 </tbody>
 </table>
 <!-- Pagination -->
 <div class="px-6 py-4 flex items-center justify-between bg-surface-container-low/30 border-t border-outline-variant/10">
-<p class="text-xs text-on-surface-variant">전체 128개 헬스장 중 1-15 표시 중</p>
+<p class="text-xs text-on-surface-variant">
+전체 ${pageInfo.allPage }페이지 중 ${pageInfo.curPage }페이지 표시 중</p>
 <div class="flex items-center gap-1">
-<button class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-container transition-colors">
+<c:choose>
+<c:when test="${pageInfo.curPage>1 }">
+<a href="memberGym?page=${pageInfo.curPage-1}"
+class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="chevron_left">chevron_left</span>
+</a>
+</c:when>
+<c:otherwise>
+<button class="w-8 h-8 flex items-center justify-center rounded opacity-30 cursor-not allowed">
 <span class="material-symbols-outlined text-lg" data-icon="chevron_left">chevron_left</span>
 </button>
-<button class="w-8 h-8 flex items-center justify-center rounded bg-primary text-white font-bold text-xs shadow-sm">1</button>
-<button class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-container text-xs font-medium">2</button>
-<button class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-container text-xs font-medium">3</button>
-<button class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-container text-xs font-medium">...</button>
-<button class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-container text-xs font-medium">9</button>
-<button class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-container transition-colors">
+</c:otherwise>
+</c:choose>
+
+<c:forEach begin="${pageInfo.startPage }" end="${pageInfo.endPage }" var="page">
+<c:choose>
+<c:when test="${pageInfo.curPage == page }">
+<button class="w-8 h-8 flex items-center justify-center rounded bg-primary text-white font-bold text-xs shadow-sm">
+${page }
+</button>
+</c:when>
+<c:otherwise>
+<a href="memberGym?page=${page }"
+class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-container text-xs font-medium">
+${page }
+</a>
+</c:otherwise>
+</c:choose>
+</c:forEach>
+
+<c:choose>
+<c:when test="${pageInfo.curPage < pageInfo.allPage}">
+<a href="memberGym?page=${pageInfo.curPage + 1}"
+class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="chevron_right">chevron_right</span>
+</a>
+</c:when>
+<c:otherwise>
+<button class="w-8 h-8 flex items-center justify-center rounded opacity-30 cursor-not allowed">
 <span class="material-symbols-outlined text-lg" data-icon="chevron_right">chevron_right</span>
 </button>
+</c:otherwise>
+</c:choose>
 </div>
 </div>
 </div>
